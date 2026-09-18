@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-navy-950: #0c0633;
+  --color-navy-900: #14094d;
+  --color-navy-800: #1d0d6b;
+  --color-navy-700: #28138c;
+  --color-navy-100: #e3dcfb;
+  --color-navy-50: #f3f0fe;
+
+  --color-gold-700: #9a6b00;
+  --color-gold-600: #c08a00;
+  --color-gold-500: #e0a500;
+  --color-gold-400: #f2b90d;
+  --color-gold-300: #f7cd4d;
+  --color-gold-200: #fbe08f;
+  --color-gold-100: #fdf3cf;
+  --color-gold-50: #fefaf0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #f6f5fb;
+  color: #17122b;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #f7cd4d 0%, #e0a500 45%, #fff3c4 55%, #c08a00 70%, #f2b90d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gold-btn {
+  background: linear-gradient(135deg, #c08a00 0%, #f2b90d 45%, #ffe27a 50%, #e0a500 60%, #9a6b00 100%);
+  color: #14094d;
+  box-shadow: 0 8px 24px -8px rgba(224, 165, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.gold-btn:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px -8px rgba(224, 165, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.gold-btn:disabled {
+  opacity: 0.55;
+  transform: none;
+  cursor: not-allowed;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 40px -18px rgba(20, 9, 77, 0.35);
+}
+
+.hero-pattern {
+  background-image: radial-gradient(circle at 20% 30%, rgba(242, 185, 13, 0.14) 0, transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(224, 165, 0, 0.1) 0, transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(40, 19, 140, 0.35) 0, transparent 55%);
+}
+
+.shield-ring {
+  border: 2px solid rgba(242, 185, 13, 0.5);
+  box-shadow: 0 0 0 6px rgba(20, 9, 77, 0.6), 0 0 0 8px rgba(242, 185, 13, 0.35),
+    0 20px 60px -15px rgba(0, 0, 0, 0.6);
+}
+
+.input-field {
+  width: 100%;
+  border: 1px solid #d9d4ec;
+  border-radius: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-field:focus {
+  border-color: #28138c;
+  box-shadow: 0 0 0 3px rgba(40, 19, 140, 0.12);
+}
+
+.label-text {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #3d3670;
+  margin-bottom: 0.3rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.scroll-thin::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #c9c2e6;
+  border-radius: 8px;
+}
+
+.proctor-pulse {
+  animation: proctorPulse 1.6s ease-in-out infinite;
+}
+@keyframes proctorPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+.warn-flash {
+  animation: warnFlash 0.6s ease-in-out 3;
+}
+@keyframes warnFlash {
+  0%, 100% { background-color: rgba(220, 38, 38, 0); }
+  50% { background-color: rgba(220, 38, 38, 0.18); }
+}
+
+.tick-tock {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
